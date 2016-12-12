@@ -38,6 +38,19 @@ public class HanLPTest {
         System.out.println(HanLP.segment("别把手伸进别人的口袋里"));
         System.out.println(HanLP.segment("房产的一次性交易流程"));
         System.out.println(HanLP.segment("在阿里巴巴 当 HR 是怎样一种体验"));
+        System.out.println(HanLP.segment("严守一把手机关了"));
+        System.out.println(HanLP.segment("吉林省长春药店"));
+        System.out.println(HanLP.segment("乒乓球拍卖啦"));
+        System.out.println(HanLP.segment("南京市长江大桥"));
+        System.out.println(HanLP.segment("赵军坑秦兵四十万于长亭"));
+        System.out.println(HanLP.segment("薄熙来到重庆"));
+        System.out.println(HanLP.segment("无论我打败了猪还是我打胜了猪基本上总在说明它没赢我没输"));
+        System.out.println(HanLP.segment("台上坐着主席团"));
+        System.out.println(HanLP.segment("小明在火车上画画"));
+        System.out.println(HanLP.segment("江阴毛纺织厂"));
+        System.out.println(HanLP.segment("北京大学生前来应聘"));
+        System.out.println(HanLP.segment("结婚的和尚未结婚的"));
+        System.out.println(HanLP.segment("这事的确定不下来"));
 
 
         System.out.println(IndexTokenizer.segment("在阿里巴巴 当 HR 是怎样一种体验"));
