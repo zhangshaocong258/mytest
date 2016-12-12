@@ -29,7 +29,7 @@ abstract class Parent {
 
 }
 
-interface test {
+interface interfaceTest {
     static int TASK_ADD = 1;
     static int TASK_DEL = 2;
     static int TASK_MODIFY = 3;
