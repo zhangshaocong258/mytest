@@ -2,26 +2,56 @@ package com.szl;
 
 import org.ansj.app.keyword.KeyWordComputer;
 import org.ansj.app.keyword.Keyword;
+import org.ansj.library.UserDefineLibrary;
+import org.ansj.recognition.impl.FilterRecognition;
 import org.ansj.splitWord.analysis.*;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by zsc on 2016/12/8.
  */
 public class AnsjTest {
     public static void main(String args[]) {
-        KeyWordComputer kwc = new KeyWordComputer(5);
-        String title = "维基解密否认斯诺登接受委内瑞拉庇护";
-        String content = "有俄罗斯国会议员，9号在社交网站推特表示，美国中情局前雇员斯诺登，已经接受委内瑞拉的庇护，不过推文在发布几分钟后随即删除。" +
-                "俄罗斯当局拒绝发表评论，而一直协助斯诺登的维基解密否认他将投靠委内瑞拉。　　" +
-                "俄罗斯国会国际事务委员会主席普什科夫，在个人推特率先披露斯诺登已接受委内瑞拉的庇护建议，令外界以为斯诺登的动向终于有新进展。　　" +
-                "不过推文在几分钟内旋即被删除，普什科夫澄清他是看到俄罗斯国营电视台的新闻才这样说，而电视台已经作出否认，称普什科夫是误解了新闻内容。　　" +
-                "委内瑞拉驻莫斯科大使馆、俄罗斯总统府发言人、以及外交部都拒绝发表评论。而维基解密就否认斯诺登已正式接受委内瑞拉的庇护，说会在适当时间公布有关决定。　　" +
-                "斯诺登相信目前还在莫斯科谢列梅捷沃机场，已滞留两个多星期。他早前向约20个国家提交庇护申请，委内瑞拉、尼加拉瓜和玻利维亚，先后表示答应，不过斯诺登还没作出决定。　　" +
-                "而另一场外交风波，玻利维亚总统莫拉莱斯的专机上星期被欧洲多国以怀疑斯诺登在机上为由拒绝过境事件，涉事国家之一的西班牙突然转口风，外长马加略]号表示愿意就任何误解致歉，但强调当时当局没有关闭领空或不许专机降落。";
-        Collection<Keyword> result = kwc.computeArticleTfidf(title, content);
+        KeyWordComputer kwc = new KeyWordComputer(10);
+        String title = "在, 阿里, 巴巴, 当, HR, 是, 怎样, 一种, 体验";
+        String content = "最近阿里巴巴的 HR 比较火，似乎还能掌握面试者的生杀大权。想问问在阿里巴巴当 HR，在招聘季和平时都做些什么工作，有什么体验";
+        List<Keyword> result = kwc.computeArticleTfidf(title, content);
         System.out.println(result);
+//        for (int i = 0; i < result.size(); i++) {
+//            System.out.println(result.get(i).getName());
+//        }
+//        FilterRecognition filter = new FilterRecognition();
+//        filter.insertStopNatures("u", "w"); //过滤词性
+//        String words = "中国是世界四大文明古国之一，有着悠久的历史，距今约5000年前，以中原地区为中心开始出现聚落组织进而成国家和朝代，" +
+//                "后历经多次演变和朝代更迭，持续时间较长的朝代有夏、商、周、汉、晋、唐、宋、元、明、清等。" +
+//                "中原王朝历史上不断与北方游牧民族交往、征战，众多民族融合成为中华民族。20世纪初辛亥革命后，中国的君主政体退出历史舞台，取而代之的是共和政体。" +
+//                "1949年中华人民共和国成立后，在中国大陆建立了人民代表大会制度的政体。中国有着多彩的民俗文化，传统艺术形式有诗词、戏曲、书法和国画等，" +
+//                "春节、元宵、清明、端午、中秋、重阳等是中国重要的传统节日。";
+//        System.out.println(ToAnalysis.parse(words));
+//        System.out.println(ToAnalysis.parse(words).recognition(filter).toString(" "));
+//        System.out.println(ToAnalysis.parse(words).recognition(filter).toStringWithOutNature("  "));
+        System.out.println(DicAnalysis.parse("我国工人阶级和广大劳动群众要更加紧密地团结在党中央周围"));
+        System.out.println(DicAnalysis.parse("别把手伸进别人的口袋里"));
+        System.out.println(DicAnalysis.parse("房产的一次性交易流程"));
+        System.out.println(ToAnalysis.parse("他说的确实在理"));
+        System.out.println(DicAnalysis.parse("他说的确实在理"));
+        System.out.println(ToAnalysis.parse("老师说明天下午休息"));
+        System.out.println(DicAnalysis.parse("老师说明天下午休息"));
+        System.out.println(ToAnalysis.parse("这块地面积还真不小"));
+        System.out.println(DicAnalysis.parse("这块地面积还真不小"));
+        System.out.println(ToAnalysis.parse("新华社记者兰红光摄"));
+        System.out.println(DicAnalysis.parse("新华社记者兰红光摄"));
+        System.out.println(ToAnalysis.parse("在这些企业中 国有企业 有十个"));
+        System.out.println(DicAnalysis.parse("在这些企业中 国有企业 有十个"));
+        System.out.println(ToAnalysis.parse("原子结合成分子时"));
+        System.out.println(DicAnalysis.parse("原子结合成分子时"));
+        System.out.println(ToAnalysis.parse("这样的人才能经受住考验"));
+        System.out.println(DicAnalysis.parse("这样的人才能经受住考验"));
+        System.out.println(IndexAnalysis.parse("明天下雨"));
+
+//        UserDefineLibrary.insertWord();
     }
 }
 
