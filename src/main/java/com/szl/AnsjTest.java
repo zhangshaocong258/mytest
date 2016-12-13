@@ -15,8 +15,8 @@ import java.util.List;
 public class AnsjTest {
     public static void main(String args[]) {
         KeyWordComputer kwc = new KeyWordComputer(10);
-        String title = "在, 阿里, 巴巴, 当, HR, 是, 怎样, 一种, 体验";
-        String content = "最近阿里巴巴的 HR 比较火，似乎还能掌握面试者的生杀大权。想问问在阿里巴巴当 HR，在招聘季和平时都做些什么工作，有什么体验";
+        String title = "为何 赵本山 的 徒弟 比 郭德纲 的 徒弟 忠诚度 要 高？";
+        String content = "一个二人转小品，一个相声，赵老师目前明面上一个叛离的徒弟都没有，而郭老师则风声鹤唳，就此各位可以说下自己观点。";
         List<Keyword> result = kwc.computeArticleTfidf(title, content);
         System.out.println(result);
 //        for (int i = 0; i < result.size(); i++) {
@@ -32,24 +32,24 @@ public class AnsjTest {
 //        System.out.println(ToAnalysis.parse(words));
 //        System.out.println(ToAnalysis.parse(words).recognition(filter).toString(" "));
 //        System.out.println(ToAnalysis.parse(words).recognition(filter).toStringWithOutNature("  "));
-        System.out.println(DicAnalysis.parse("我国工人阶级和广大劳动群众要更加紧密地团结在党中央周围"));
-        System.out.println(DicAnalysis.parse("别把手伸进别人的口袋里"));
-        System.out.println(DicAnalysis.parse("房产的一次性交易流程"));
-        System.out.println(ToAnalysis.parse("他说的确实在理"));
-        System.out.println(DicAnalysis.parse("他说的确实在理"));
-        System.out.println(ToAnalysis.parse("老师说明天下午休息"));
-        System.out.println(DicAnalysis.parse("老师说明天下午休息"));
-        System.out.println(ToAnalysis.parse("这块地面积还真不小"));
-        System.out.println(DicAnalysis.parse("这块地面积还真不小"));
-        System.out.println(ToAnalysis.parse("新华社记者兰红光摄"));
-        System.out.println(DicAnalysis.parse("新华社记者兰红光摄"));
-        System.out.println(ToAnalysis.parse("在这些企业中 国有企业 有十个"));
-        System.out.println(DicAnalysis.parse("在这些企业中 国有企业 有十个"));
-        System.out.println(ToAnalysis.parse("原子结合成分子时"));
-        System.out.println(DicAnalysis.parse("原子结合成分子时"));
-        System.out.println(ToAnalysis.parse("这样的人才能经受住考验"));
-        System.out.println(DicAnalysis.parse("这样的人才能经受住考验"));
-        System.out.println(IndexAnalysis.parse("明天下雨"));
+//        System.out.println(DicAnalysis.parse("我国工人阶级和广大劳动群众要更加紧密地团结在党中央周围"));
+//        System.out.println(DicAnalysis.parse("别把手伸进别人的口袋里"));
+//        System.out.println(DicAnalysis.parse("房产的一次性交易流程"));
+//        System.out.println(ToAnalysis.parse("他说的确实在理"));
+//        System.out.println(DicAnalysis.parse("他说的确实在理"));
+//        System.out.println(ToAnalysis.parse("老师说明天下午休息"));
+//        System.out.println(DicAnalysis.parse("老师说明天下午休息"));
+//        System.out.println(ToAnalysis.parse("这块地面积还真不小"));
+//        System.out.println(DicAnalysis.parse("这块地面积还真不小"));
+//        System.out.println(ToAnalysis.parse("新华社记者兰红光摄"));
+//        System.out.println(DicAnalysis.parse("新华社记者兰红光摄"));
+//        System.out.println(ToAnalysis.parse("在这些企业中 国有企业 有十个"));
+//        System.out.println(DicAnalysis.parse("在这些企业中 国有企业 有十个"));
+//        System.out.println(ToAnalysis.parse("原子结合成分子时"));
+//        System.out.println(DicAnalysis.parse("原子结合成分子时"));
+//        System.out.println(ToAnalysis.parse("这样的人才能经受住考验"));
+//        System.out.println(DicAnalysis.parse("这样的人才能经受住考验"));
+//        System.out.println(IndexAnalysis.parse("明天下雨"));
 
 //        UserDefineLibrary.insertWord();
     }
