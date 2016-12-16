@@ -1,12 +1,14 @@
 package com.szl;
 
 import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.dictionary.CoreSynonymDictionary;
 import com.hankcs.hanlp.dictionary.CustomDictionary;
 import com.hankcs.hanlp.dictionary.other.CharType;
 import com.hankcs.hanlp.dictionary.stopword.CoreStopWordDictionary;
 import com.hankcs.hanlp.dictionary.stopword.Filter;
 import com.hankcs.hanlp.seg.NShort.NShortSegment;
 import com.hankcs.hanlp.seg.common.Term;
+import com.hankcs.hanlp.suggest.Suggester;
 import com.hankcs.hanlp.tokenizer.BasicTokenizer;
 import com.hankcs.hanlp.tokenizer.IndexTokenizer;
 import com.hankcs.hanlp.tokenizer.NotionalTokenizer;
@@ -20,23 +22,27 @@ import java.util.List;
  * Created by zsc on 2016/12/12.
  * CustomDictionary中添加新词时，需要删除下面的bin，其他的应该类似，间隔是空格
  * filter用于索引分词的去停用词，只能自己定义，没有api
- *
  */
 public class HanLPTest {
     public static void main(String args[]) {
-        CoreStopWordDictionary.FILTER = new Filter()
-        {
-            @Override
-            public boolean shouldInclude(Term term)
-            {
-                switch (term.nature)
-                {
-                    case nz:
-                        return !CoreStopWordDictionary.contains(term.word);
-                }
-                return false;
-            }
-        };
+
+
+//        //过滤
+//        CoreStopWordDictionary.FILTER = new Filter()
+//        {
+//            @Override
+//            public boolean shouldInclude(Term term)
+//            {
+//                switch (term.nature)
+//                {
+//                    case nz:
+//                        return !CoreStopWordDictionary.contains(term.word);
+//                }
+//                return false;
+//            }
+//        };
+
+        System.out.println("***********标准歧义语句*************");
         System.out.println(HanLP.segment("你好，欢迎使用HanLP汉语处理包！"));
         System.out.println(StandardTokenizer.segment("这样的人才能经受住考验"));
         System.out.println(StandardTokenizer.segment("在这些企业中国有企业有十个"));
@@ -48,9 +54,13 @@ public class HanLPTest {
         System.out.println(StandardTokenizer.segment("他说的确实在理"));
         System.out.println(StandardTokenizer.segment("别把手伸进别人的口袋里"));
         System.out.println(StandardTokenizer.segment("房产的一次性交易流程"));
-        System.out.println(StandardTokenizer.segment("在阿里巴巴当 HR 是怎样一种体验"));
+        System.out.println(StandardTokenizer.segment("在阿里巴巴当HR是怎样一种体验"));
+        System.out.println(StandardTokenizer.segment("张少聪-知乎"));
+        System.out.println(StandardTokenizer.segment("不要不留后路"));
+        System.out.println(StandardTokenizer.segment("郑州副局长要火"));
 
-        System.out.println("*******************************");
+
+        System.out.println("***********HLP歧义语句*************");
         System.out.println(HanLP.segment("这样的人才能经受住考验"));
         System.out.println(HanLP.segment("在这些企业中国有企业有十个"));
         System.out.println(HanLP.segment("原子结合成分子时"));
@@ -80,22 +90,29 @@ public class HanLPTest {
         System.out.println(HanLP.segment("有意见分歧"));
         System.out.println(HanLP.segment("南京市长江大桥"));
 
+
 //        CustomDictionary.insert("白富美", "nz 1024");
+        System.out.println("***********索引语句*************");
         System.out.println(IndexTokenizer.segment("为何赵本山的徒弟比郭德纲的徒弟忠诚度要高？"));//要去掉问号
-        System.out.println(StandardTokenizer.segment("张少聪-知乎"));//要去掉问号
-        System.out.println(StandardTokenizer.segment("不要不留后路"));//要去掉问号
         System.out.println(IndexTokenizer.segment("《神奇动物在哪里》中有哪些不易察觉的彩蛋或细节？"));
         System.out.println(IndexTokenizer.segment("在阿里巴巴当hr是一种怎样的体验？"));
+        System.out.println(IndexTokenizer.segment("郑州副局长要火"));
         System.out.println(filter(IndexTokenizer.segment("在阿里巴巴当hr是一种怎样的体验？")));
         System.out.println(filter(IndexTokenizer.segment("《神奇动物在哪里》中有哪些不易察觉的彩蛋或细节？？")));
-        System.out.println(IndexTokenizer.segment("郑州副局长要火"));
         System.out.println(filter(IndexTokenizer.segment("副局长要火")));
         System.out.println(filter(IndexTokenizer.segment("张少聪-知乎")));
+        System.out.println(filter(IndexTokenizer.segment("在阿里巴巴当hr是一种怎样的体验")));
+
+
+        System.out.println("***********关键词语句*************");
         System.out.println(HanLP.extractKeyword("为何赵本山的徒弟比郭德纲的徒弟忠诚度要高", 20));
         System.out.println(HanLP.extractKeyword("郑州副局长要火", 20));
         System.out.println(HanLP.extractKeyword("在阿里巴巴当hr是一种怎样的体验", 20));
         System.out.println(HanLP.extractKeyword("《神奇动物在哪里》中有哪些不易察觉的彩蛋或细节", 20));
         System.out.println(HanLP.extractKeyword("哈利·波特如果当时进了斯莱特林学院会怎么样", 20));
+
+
+        System.out.println("***********过滤语句*************");
         System.out.println(NotionalTokenizer.segment("为何赵本山的徒弟比郭德纲的徒弟忠诚度要高"));
         System.out.println(NotionalTokenizer.segment("在阿里巴巴当hr是一种怎样的体验"));
         System.out.println(NotionalTokenizer.segment("《神奇动物在哪里》中有哪些不易察觉的彩蛋或细节"));
@@ -104,7 +121,42 @@ public class HanLPTest {
         System.out.println(NotionalTokenizer.segment("怎样在大学宿舍学习"));
         System.out.println(NotionalTokenizer.segment("郑州副局长要火"));
         System.out.println(NotionalTokenizer.segment("在阿里巴巴当hr是一种怎样的体验"));
-        System.out.println(StandardTokenizer.segment("郑州副局长要火"));
+    }
+
+    private static void synonym() {
+        //可自定义，同义词距离为零
+        String[] wordArray = new String[]
+                {
+                        "香蕉",
+                        "苹果",
+                        "白菜",
+                        "水果",
+                        "蔬菜",
+                        "自行车",
+                        "公交车",
+                        "飞机",
+                        "买",
+                        "卖",
+                        "购入",
+                        "新年",
+                        "春节",
+                        "丢失",
+                        "补办",
+                        "办理",
+                        "送给",
+                        "寻找",
+                        "孩子",
+                        "教室",
+                        "教师",
+                        "会计",
+                };
+        for (String a : wordArray)
+        {
+            for (String b : wordArray)
+            {
+                System.out.println(a + "\t" + b + "\t之间的距离是\t" + CoreSynonymDictionary.distance(a, b));
+            }
+        }
     }
 
     private static List<Term> filter(List<Term> termList) {
