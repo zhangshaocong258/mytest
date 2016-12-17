@@ -28,10 +28,10 @@ public class FilterURL {
         Pattern question = Pattern.compile("^(www.zhihu.com_question_([0-9]+\\.html$))");
         Pattern people = Pattern.compile("^(www.zhihu.com_people_(.*\\.html))");
         Pattern collection = Pattern.compile("^(www.zhihu.com_collection_([0-9]+\\.html$))");
-        Pattern topic = Pattern.compile("^(www.zhihu.com_topic_([0-9]+$\\.html))");
-        Pattern roundTable = Pattern.compile("^(www.zhihu.com_roundtable_(.*\\.html))");
-        Pattern org = Pattern.compile("^(www.zhihu.com_org_(.*\\.html))");
-        Pattern publications = Pattern.compile("^(www.zhihu.com_publications_(.*\\.html))");
+        Pattern topic = Pattern.compile("^(www.zhihu.com_topic_([0-9]+\\.html$))");
+        Pattern roundTable = Pattern.compile("^(www.zhihu.com_roundtable_(.*\\.html$))");
+        Pattern org = Pattern.compile("^(www.zhihu.com_org_(.*\\.html$))");
+        Pattern publications = Pattern.compile("^(www.zhihu.com_publications_(.*\\.html$))");
 
         Matcher questionMatcher = question.matcher(url);
         Matcher peopleMatcher = people.matcher(url);
