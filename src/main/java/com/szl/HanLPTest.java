@@ -27,22 +27,52 @@ public class HanLPTest {
     public static void main(String args[]) {
 
 
-//        //过滤
-//        CoreStopWordDictionary.FILTER = new Filter()
-//        {
-//            @Override
-//            public boolean shouldInclude(Term term)
-//            {
-//                switch (term.nature)
-//                {
-//                    case nz:
-//                        return !CoreStopWordDictionary.contains(term.word);
-//                }
-//                return false;
-//            }
-//        };
+        //过滤
+        CoreStopWordDictionary.FILTER = new Filter()
+        {
+            @Override
+            public boolean shouldInclude(Term term) {
+                String nature = term.nature != null?term.nature.toString():"空";
+                char firstChar = nature.charAt(0);
+                switch (firstChar)
+                {
+                    case 'b': //区别词 正 副
+                    case 'z': //状态词
+                    case 'r': //代词 怎样 如何
+                    case 'm':
+                        return true;
+                    case 'c':
+                    case 'e':
 
-        System.out.println("***********标准歧义语句*************");
+                    case 'o':
+                    case 'p':
+                    case 'q':
+
+                    case 'u':
+                    case 'w':
+                    case 'y':
+                        return false;
+                    case 'd':
+                    case 'f':
+                    case 'g':
+                    case 'h':
+                    case 'i':
+                    case 'j':
+                    case 'k':
+                    case 'l':
+                    case 'n':
+                    case 's':
+                    case 't':
+                    case 'v':
+                    case 'x':
+
+                    default:
+                        return term.word.length() > 1 && !CoreStopWordDictionary.contains(term.word);
+                }
+            }
+        };
+
+        System.out.println("\n***********标准歧义语句*************");
         System.out.println(HanLP.segment("你好，欢迎使用HanLP汉语处理包！"));
         System.out.println(StandardTokenizer.segment("这样的人才能经受住考验"));
         System.out.println(StandardTokenizer.segment("在这些企业中国有企业有十个"));
@@ -55,12 +85,14 @@ public class HanLPTest {
         System.out.println(StandardTokenizer.segment("别把手伸进别人的口袋里"));
         System.out.println(StandardTokenizer.segment("房产的一次性交易流程"));
         System.out.println(StandardTokenizer.segment("在阿里巴巴当HR是怎样一种体验"));
-        System.out.println(StandardTokenizer.segment("张少聪-知乎"));
+        System.out.println(StandardTokenizer.segment("张飞-知乎"));
         System.out.println(StandardTokenizer.segment("不要不留后路"));
         System.out.println(StandardTokenizer.segment("郑州副局长要火"));
+        System.out.println(StandardTokenizer.segment("飞行员年薪有百万吗？"));
+        System.out.println(filter(StandardTokenizer.segment("如何才能成为一名优秀的营销策划人")));
 
 
-        System.out.println("***********HLP歧义语句*************");
+        System.out.println("\n***********HLP歧义语句*************");
         System.out.println(HanLP.segment("这样的人才能经受住考验"));
         System.out.println(HanLP.segment("在这些企业中国有企业有十个"));
         System.out.println(HanLP.segment("原子结合成分子时"));
@@ -77,7 +109,6 @@ public class HanLPTest {
         System.out.println(HanLP.segment("乒乓球拍卖啦"));
         System.out.println(HanLP.segment("南京市长江大桥"));
         System.out.println(HanLP.segment("赵军坑秦兵四十万于长亭"));
-        System.out.println(HanLP.segment("薄熙来到重庆"));
         System.out.println(HanLP.segment("无论我打败了猪还是我打胜了猪基本上总在说明它没赢我没输"));
         System.out.println(HanLP.segment("台上坐着主席团"));
         System.out.println(HanLP.segment("小明在火车上画画"));
@@ -89,10 +120,17 @@ public class HanLPTest {
         System.out.println(HanLP.segment("大学生活动中心"));
         System.out.println(HanLP.segment("有意见分歧"));
         System.out.println(HanLP.segment("南京市长江大桥"));
+        System.out.println(HanLP.segment("IBM（中国）是一家怎样的公司？"));
+        System.out.println(HanLP.segment(("如何阅读上市公司的年报？有哪些较好的方法？")));
+        System.out.println(filter(HanLP.segment(("飞行员年薪有百万吗？"))));
+        System.out.println(filter(HanLP.segment(("在阿里工作三个月很想辞职怎么办？"))));
+        System.out.println(HanLP.segment(("捕获知乎数据")));
+        System.out.println(filter(HanLP.segment(("上知乎看小说"))));
+
 
 
 //        CustomDictionary.insert("白富美", "nz 1024");
-        System.out.println("***********索引语句*************");
+        System.out.println("\n***********索引语句*************");
         System.out.println(IndexTokenizer.segment("为何赵本山的徒弟比郭德纲的徒弟忠诚度要高？"));//要去掉问号
         System.out.println(IndexTokenizer.segment("《神奇动物在哪里》中有哪些不易察觉的彩蛋或细节？"));
         System.out.println(IndexTokenizer.segment("在阿里巴巴当hr是一种怎样的体验？"));
@@ -102,17 +140,23 @@ public class HanLPTest {
         System.out.println(filter(IndexTokenizer.segment("副局长要火")));
         System.out.println(filter(IndexTokenizer.segment("张少聪-知乎")));
         System.out.println(filter(IndexTokenizer.segment("在阿里巴巴当hr是一种怎样的体验")));
+        System.out.println(filter(IndexTokenizer.segment("如何阅读上市公司的年报？有哪些较好的方法？")));
+        System.out.println(filter(IndexTokenizer.segment("飞行员年薪有百万吗？")));
+        System.out.println(filter(IndexTokenizer.segment("在阿里工作三个月很想辞职怎么办？")));
 
 
-        System.out.println("***********关键词语句*************");
+        System.out.println("\n***********关键词语句*************");
         System.out.println(HanLP.extractKeyword("为何赵本山的徒弟比郭德纲的徒弟忠诚度要高", 20));
         System.out.println(HanLP.extractKeyword("郑州副局长要火", 20));
         System.out.println(HanLP.extractKeyword("在阿里巴巴当hr是一种怎样的体验", 20));
         System.out.println(HanLP.extractKeyword("《神奇动物在哪里》中有哪些不易察觉的彩蛋或细节", 20));
         System.out.println(HanLP.extractKeyword("哈利·波特如果当时进了斯莱特林学院会怎么样", 20));
+        System.out.println(HanLP.extractKeyword(("如何阅读上市公司的年报？有哪些较好的方法？"), 20));
+        System.out.println(HanLP.extractKeyword(("飞行员年薪有百万吗？"), 20));
+        System.out.println(HanLP.extractKeyword(("在阿里工作三个月很想辞职怎么办？"), 20));
 
 
-        System.out.println("***********过滤语句*************");
+        System.out.println("\n***********过滤语句*************");
         System.out.println(NotionalTokenizer.segment("为何赵本山的徒弟比郭德纲的徒弟忠诚度要高"));
         System.out.println(NotionalTokenizer.segment("在阿里巴巴当hr是一种怎样的体验"));
         System.out.println(NotionalTokenizer.segment("《神奇动物在哪里》中有哪些不易察觉的彩蛋或细节"));
@@ -121,6 +165,12 @@ public class HanLPTest {
         System.out.println(NotionalTokenizer.segment("怎样在大学宿舍学习"));
         System.out.println(NotionalTokenizer.segment("郑州副局长要火"));
         System.out.println(NotionalTokenizer.segment("在阿里巴巴当hr是一种怎样的体验"));
+        System.out.println(NotionalTokenizer.segment("飞行员年薪有百万吗"));
+        System.out.println(NotionalTokenizer.segment("上知乎看小说"));
+        System.out.println(NotionalTokenizer.segment("在阿里工作三个月很想辞职怎么办"));
+
+        System.out.println("\n***********语义距离*************");
+//        synonym();
     }
 
     private static void synonym() {
@@ -169,6 +219,53 @@ public class HanLPTest {
                 case 'b': //区别词 正 副
                 case 'z': //状态词
                 case 'r': //代词 怎样 如何
+                case 'm':
+                    break;
+                case 'c':
+                case 'e':
+
+                case 'o':
+                case 'p':
+                case 'q':
+
+                case 'u':
+                case 'w':
+                case 'y':
+                    temp.add(term);
+                    break;
+                case 'd':
+                case 'f':
+                case 'g':
+                case 'h':
+                case 'i':
+                case 'j':
+                case 'k':
+                case 'l':
+                case 'n':
+                case 's':
+                case 't':
+                case 'v':
+                case 'x':
+                default:
+                    if(term.word.length() == 1) {//长度为1，删除，可以理解为没有分出来词，因此删除，最后查询时分出的词，也可以删除停用词
+                        temp.add(term);
+                    }
+            }
+        }
+        termList.removeAll(temp);
+        return termList;
+    }
+
+    private static String filter2(List<Term> termList) {
+        List<Term> temp = new ArrayList<Term>();
+        for (int i = 0; i < termList.size(); i++) {
+            Term term = termList.get(i);
+            String nature = term.nature != null ? term.nature.toString() : "空";
+            char firstChar = nature.charAt(0);
+            switch(firstChar) {
+                case 'b': //区别词 正 副
+                case 'z': //状态词
+                case 'r': //代词 怎样 如何
                     break;
                 case 'c':
                 case 'e':
@@ -202,6 +299,6 @@ public class HanLPTest {
             }
         }
         termList.removeAll(temp);
-        return termList;
+        return termList.toString();
     }
 }
