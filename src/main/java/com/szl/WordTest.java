@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Created by zsc on 2016/12/10.
+ * word分词
  */
 public class WordTest {
     public static void main(String args[]) {

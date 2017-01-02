@@ -11,6 +11,7 @@ import java.util.List;
 
 /**
  * Created by zsc on 2016/12/8.
+ * ansj 中科大NLPIR汉语分词系统java
  */
 public class AnsjTest {
     public static void main(String args[]) {

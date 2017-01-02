@@ -4,6 +4,7 @@ import com.huaban.analysis.jieba.JiebaSegmenter;
 
 /**
  * Created by zsc on 2016/12/9.
+ * 结巴分词 deprecate
  */
 public class JiebaTest {
     public static void main(String args[]) {

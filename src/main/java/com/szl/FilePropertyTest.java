@@ -6,6 +6,7 @@ import java.util.Date;
 
 /**
  * Created by zsc on 2016/11/10.
+ * 修改文件属性
  */
 public class FilePropertyTest {
 

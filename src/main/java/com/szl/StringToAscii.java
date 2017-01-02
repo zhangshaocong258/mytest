@@ -4,6 +4,7 @@ import java.io.IOException;
 
 /**
  * Created by zsc on 2016/4/23.
+ * string 到 ascii转换
  */
 public class StringToAscii {
     public static void main(String[] args) throws IOException {

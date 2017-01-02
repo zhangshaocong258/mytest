@@ -2,6 +2,7 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/8/1.
+ * 斐波那契数列
  */
 public class Math2 {
     /**

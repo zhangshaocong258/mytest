@@ -4,6 +4,7 @@ import java.io.*;
 
 /**
  * Created by zsc on 2016/7/27.
+ * 字符串分割
  */
 public class StreamTokenizerTest {
     public static void main(String[] args) {

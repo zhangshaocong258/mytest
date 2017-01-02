@@ -5,6 +5,7 @@ import java.util.HashSet;
 
 /**
  * Created by zsc on 2016/10/21.
+ * 把list装到set中
  */
 public class DecoratorTest {
     public static void main(String[] args) {

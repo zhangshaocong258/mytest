@@ -2,6 +2,8 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/10/20.
+ * 多态 测试
+ *
  */
 public class Polymorphism {
     public static void main(String[] args) {

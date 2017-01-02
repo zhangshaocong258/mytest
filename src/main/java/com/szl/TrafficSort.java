@@ -6,6 +6,7 @@ import java.util.Collections;
 
 /**
  * Created by zsc on 2016/8/17.
+ * TrafficSort测试
  */
 public class TrafficSort {
     ArrayList<TrafficKey> keys = new ArrayList<TrafficKey>();

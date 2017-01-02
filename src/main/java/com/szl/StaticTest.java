@@ -2,6 +2,7 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/10/21.
+ * 静态初始化，调用时初始化
  */
 public class StaticTest {
     static int j = getI();

@@ -2,6 +2,7 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/5/6.
+ * 得到文件目录
  */
 
 import java.io.File;
@@ -24,9 +25,9 @@ public class FileListTest {
         File[] files = root.listFiles();
         for (File file : files) {
             if (file.isDirectory()) {
-      /**
-       * 递归调用
-       */
+                /**
+                 * 递归调用
+                 */
                 getFiles(file.getAbsolutePath());
                 filelist.add(file.getAbsolutePath());
                 System.out.println("显示" + filePath + "下所有子目录及其文件" + file.getAbsolutePath());

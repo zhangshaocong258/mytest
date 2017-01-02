@@ -15,6 +15,7 @@ import javax.swing.JProgressBar;
 
 /**
  * Created by zsc on 2016/8/24.
+ * 进度条显示
  */
 public class JProgressBarTest extends JFrame {
     private static final long serialVersionUID = 6823378424400186364L;

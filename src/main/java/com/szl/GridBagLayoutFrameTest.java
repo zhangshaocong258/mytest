@@ -1,5 +1,8 @@
-package com.szl; /**
+package com.szl;
+
+/**
  * Created by zsc on 2016/4/18.
+ * GridBagLayout测试
  */
 import java.awt.*;
 import java.awt.event.ActionEvent;

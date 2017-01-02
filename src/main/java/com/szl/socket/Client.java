@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 /**
  * Created by zsc on 2016/9/6.
+ * 简单的服务端客户端通信
  */
 public class Client {
     public static final String IP_ADDR = "127.0.0.1";//服务器地址

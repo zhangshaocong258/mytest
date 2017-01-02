@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by zsc on 2016/3/14.
- * 传参数，改变
+ * 传参数，改变，相当于是b.add
  */
 public class Constructor {
     public static void main(String[] args){

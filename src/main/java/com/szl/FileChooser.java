@@ -2,6 +2,7 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/5/6.
+ * 打开文件目录
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

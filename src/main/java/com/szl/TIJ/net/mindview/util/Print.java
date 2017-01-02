@@ -2,6 +2,7 @@ package com.szl.TIJ.net.mindview.util;
 
 /**
  * Created by zsc on 2016/10/27.
+ * TIJ中自定义的函数
  */
 
 import java.io.*;

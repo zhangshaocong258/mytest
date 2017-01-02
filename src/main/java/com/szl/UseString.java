@@ -2,6 +2,7 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/3/8.
+ * string 初始化
  */
 public class UseString {
 

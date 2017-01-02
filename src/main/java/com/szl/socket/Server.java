@@ -9,6 +9,7 @@ import java.net.Socket;
 
 /**
  * Created by zsc on 2016/9/6.
+ * 简单的服务端客户端通信
  */
 public class Server {
     public static final int PORT = 12345;//监听的端口号

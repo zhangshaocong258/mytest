@@ -2,6 +2,7 @@ package com.szl.mybatis;
 
 /**
  * Created by zsc on 2016/12/18.
+ * 如果有带参数的构造器
  * 必须有一个空的构造函数
  */
 public class User {

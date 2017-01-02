@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by zsc on 2016/8/9.
+ * 合并文件
  */
 public class FileCombineTest {
 

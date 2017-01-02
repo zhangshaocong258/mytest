@@ -1,5 +1,8 @@
-package com.szl; /**
+package com.szl;
+
+/**
  * Created by zsc on 2016/3/23.
+ * 界面demo
  */
 
 import java.math.BigDecimal;

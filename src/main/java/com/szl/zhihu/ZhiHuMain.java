@@ -17,6 +17,7 @@ import java.util.Scanner;
 
 /**
  * Created by zsc on 2016/11/22.
+ * 简单的单线程，cookie成功即可
  */
 public class ZhiHuMain {
     private static Logger logger = Logger.getLogger(ZhiHuMain.class);

@@ -11,6 +11,7 @@ import org.dom4j.io.*;
 
 /**
  * Created by zsc on 2016/4/23.
+ * dom4j操作
  */
 public class Dom4jWrite {
     private static Document recordDocument;

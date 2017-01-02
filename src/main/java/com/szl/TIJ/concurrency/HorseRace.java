@@ -5,6 +5,8 @@ package com.szl.TIJ.concurrency;
  *
  * concurrency/HorseRace.java
  * Using CyclicBarriers.
+ *
+ * 赛马程序
  */
 
 import java.util.concurrent.*;

@@ -21,6 +21,7 @@ import java.nio.channels.FileChannel;
 
 /**
  * Created by zsc on 2016/7/7.
+ * 读文件 一堆方法
  */
 public class ReadFileTools {
 

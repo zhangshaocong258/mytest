@@ -2,6 +2,7 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/11/30.
+ * 移位运算
  */
 public class ShiftBinary {
     //移位运算

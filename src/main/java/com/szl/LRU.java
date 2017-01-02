@@ -2,6 +2,7 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/6/12.
+ * LRU算法 中兴笔试
  */
 public class LRU {
     public static void main(String[] args) {

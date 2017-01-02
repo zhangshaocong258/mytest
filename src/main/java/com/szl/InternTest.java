@@ -6,6 +6,7 @@ import java.util.Random;
  * Created by zsc on 2016/10/25.
  *
  * ！！！！！！！！！运行时每一部分分开运行，否则结果出错
+ * intern 美团博客
  *
  */
 public class InternTest {

@@ -2,6 +2,7 @@ package com.szl.socket;
 
 /**
  * Created by zsc on 2016/9/8.
+ * 同时接收文件 客户端
  */
 
 import java.io.*;

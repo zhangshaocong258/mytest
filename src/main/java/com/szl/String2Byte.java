@@ -7,6 +7,7 @@ import java.io.IOException;
 
 /**
  * Created by zsc on 2016/7/27.
+ * pcap 字符串转为byte
  */
 public class String2Byte {
     public static void main(String[] args) {

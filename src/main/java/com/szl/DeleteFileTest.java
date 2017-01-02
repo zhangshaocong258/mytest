@@ -4,6 +4,7 @@ import java.io.File;
 
 /**
  * Created by zsc on 2016/8/10.
+ * 删除文件
  */
 public class DeleteFileTest {
 

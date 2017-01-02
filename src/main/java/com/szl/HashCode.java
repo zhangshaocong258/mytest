@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by zsc on 2016/3/11.
+ * 查看hashcode
  */
 public class HashCode {
     Num n = new Num();

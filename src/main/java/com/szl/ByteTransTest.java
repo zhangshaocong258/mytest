@@ -2,6 +2,8 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/11/23.
+ * 字节转int等
+ * 主要用了移位，与
  */
 public class ByteTransTest {
 
@@ -29,6 +31,7 @@ public class ByteTransTest {
         return abyte;
     }
 
+    //移位，相当于乘以多少倍
     private static int byteArrayToInt(byte[] b, int offset) {
         int value = 0;
         for (int i = 0; i < 4; i++) {

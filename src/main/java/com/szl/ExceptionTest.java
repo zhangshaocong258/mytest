@@ -2,6 +2,7 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/9/7.
+ * try catch即可继续运行
  */
 public class ExceptionTest {
     public static void main(String[] agrs) {

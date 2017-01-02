@@ -13,6 +13,7 @@ import org.xml.sax.SAXException;
 
 /**
  * Created by zsc on 2016/4/11.
+ * 操作xml
  */
 public class OperateXML {
     public static void main(String[] args) {

@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * Created by zsc on 2016/5/23.
+ * 重写hashcode和equal
  */
 
 public class HashMapTest {

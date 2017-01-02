@@ -13,6 +13,7 @@ import java.io.*;
 
 /**
  * Created by zsc on 2016/11/29.
+ * 知乎下载验证码
  */
 public class ZhiHuCaptchaTest {
     public static void main(String[] args) throws IOException {

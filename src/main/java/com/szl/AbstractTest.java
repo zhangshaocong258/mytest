@@ -2,6 +2,7 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/10/20.
+ * 抽象类 接口
  */
 public class AbstractTest extends Parent {
 

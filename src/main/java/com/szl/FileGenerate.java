@@ -4,6 +4,7 @@ import java.io.*;
 
 /**
  * Created by zsc on 2016/7/7.
+ * 生成文件
  */
 public class FileGenerate {
 

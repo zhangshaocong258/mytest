@@ -2,6 +2,7 @@ package com.szl;
 
 /**
  * Created by zsc on 2016/9/8.
+ * 域名 url
  */
 
 import java.net.HttpURLConnection;

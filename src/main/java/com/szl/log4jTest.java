@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 
 /**
  * Created by zsc on 2016/12/19.
+ * log4j测试
  */
 public class log4jTest {
     private static Logger logger = Logger.getLogger(log4jTest.class);

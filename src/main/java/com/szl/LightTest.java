@@ -5,6 +5,7 @@ import java.util.EnumSet;
 
 /**
  * Created by zsc on 2016/10/27.
+ * 枚举类型 遍历
  */
 public class LightTest {
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by zsc on 2016/12/18.
+ * 有个函数名就行了
  */
 public interface UserDao {
     public void insertUser(User user);
