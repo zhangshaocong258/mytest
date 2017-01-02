@@ -99,6 +99,9 @@ public class HanLPTest {
         System.out.println(filter(StandardTokenizer.segment(("如何看待 2016 年 10 月 11 日东航 MU5106 虹桥机场跑道入侵事件？"))));
         System.out.println(filter(StandardTokenizer.segment("IBM（中国）是一家怎样的公司？")));
         System.out.println(filter(StandardTokenizer.segment("阿里的销售人员日常工作是怎样的，如何管理这些销售人员，跟美团点评的销售人员工作又有什么区别？")));
+        System.out.println(filter(StandardTokenizer.segment("你为什么从阿里巴巴集团离职？")));
+        System.out.println(filter(StandardTokenizer.segment("在阿里巴巴工作是怎样一番体验？")));
+        System.out.println(filter(StandardTokenizer.segment("阿里巴巴的HR为什么和其他互联网的HR不同，那么引人关注？")));
 
 
 
@@ -166,6 +169,9 @@ public class HanLPTest {
         System.out.println(HanLP.extractKeyword(("如何看待 2016 年 10 月 11 日东航 MU5106 虹桥机场跑道入侵事件？"), 20));
         System.out.println(HanLP.extractKeyword(("IBM（中国）是一家怎样的公司？"), 20));
         System.out.println(HanLP.extractKeyword(("阿里的销售人员日常工作是怎样的，如何管理这些销售人员，跟美团点评的销售人员工作又有什么区别？"), 20));
+        System.out.println(HanLP.extractKeyword(("你为什么从阿里巴巴集团离职？"), 20));
+        System.out.println(HanLP.extractKeyword(("在阿里巴巴工作是怎样一番体验？"), 20));
+        System.out.println(HanLP.extractKeyword(("阿里巴巴的HR为什么和其他互联网的HR不同，那么引人关注？"), 20));
 
 
 //        System.out.println("\n***********过滤语句*************");
