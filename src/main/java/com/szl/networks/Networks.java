@@ -14,8 +14,8 @@ public class Networks {
     double A = 30.0;
     double B = 10.0;     //A和B是S型函数的参数
     double ITERS = 8174;    //最大训练次数  8174
-    double ETA_W = 0.0035;   //权值调整率
-    double ETA_B = 0.001;    //阀值调整率
+    double ETA_W = 0.0035;   //权值调整率n
+    double ETA_B = 0.001;    //阀值调整率n
     double ERROR = 0.002;    //单个样本允许的误差
     double ACCU = 0.005;    //每次迭代允许的误差
     double e = 2.718281828459;
@@ -39,7 +39,7 @@ public class Networks {
         System.out.println("Begin to train BP NetWork!");
         GetNums();
 
-        int num = data.size();
+        int num = data.size();//41
 
         for (int iter = 0; iter <= ITERS; iter++) {
             for (int cnt = 0; cnt < num; cnt++) {
@@ -78,9 +78,12 @@ public class Networks {
     //public  void InitNetWork(){}         //初始化网络   Java 初始化全部置为0；
 
     public void GetNums() {
-        in_num = data.elementAt(0).x.size();                         //获取输入层节点数
-        ou_num = data.elementAt(0).y.size();                         //获取输出层节点数
-        hd_num = (int) Math.sqrt((in_num + ou_num) * 1.0) + 5;   //获取隐含层节点数
+        in_num = data.elementAt(0).x.size();                         //获取输入层节点数3
+        ou_num = data.elementAt(0).y.size();                         //获取输出层节点数1
+        hd_num = (int) Math.sqrt((in_num + ou_num) * 1.0) + 5;   //获取隐含层节点数7
+        System.out.println("in_num " + in_num);
+        System.out.println("ou_num " + ou_num);
+        System.out.println("hd_num " + hd_num);
         if (hd_num > NUM) hd_num = NUM;                     //隐含层数目不能超过最大设置
     }             //获取输入、输出和隐含层节点数
 
@@ -142,22 +145,22 @@ public class Networks {
 
     public double GetError(int cnt) {    //计算单个样本的误差
         double ans = 0;
-        for (int i = 0; i < ou_num; i++)
+        for (int i = 0; i < ou_num; i++)//1
             ans += 0.5 * (x[2][i] - data.elementAt(cnt).y.elementAt(i)) * (x[2][i] - data.elementAt(cnt).y.elementAt(i));
         return ans;
     }
 
     public double GetAccu() {        //计算所有样本的精度
         double ans = 0;
-        int num = data.size();
+        int num = data.size();//41
         for (int i = 0; i < num; i++) {
-            int m = data.get(i).x.size();
+            int m = data.get(i).x.size();//3
             for (int j = 0; j < m; j++)
-                x[0][j] = data.elementAt(i).x.elementAt(j);
-            ForwardTransfer();
-            int n = data.elementAt(i).y.size();
+                x[0][j] = data.elementAt(i).x.elementAt(j);//得到初始值
+            ForwardTransfer();//权值w已经更新，得到结果
+            int n = data.elementAt(i).y.size();//1
             for (int j = 0; j < n; j++)
-                ans += 0.5 * (x[2][j] - data.elementAt(i).y.elementAt(j)) * (x[2][j] - data.elementAt(i).y.elementAt(j));
+                ans += 0.5 * (x[2][j] - data.elementAt(i).y.elementAt(j)) * (x[2][j] - data.elementAt(i).y.elementAt(j));//误差和
         }
         return ans / num;
     }
@@ -225,12 +228,10 @@ public class Networks {
         networks.Train();
 
         Vector<Double> in = new Vector<Double>();
-        System.out.println("1\5\3");
         in.addElement((double) 1);
         in.addElement((double) 3);
         in.addElement((double) 2);
-        Vector<Double> ou = new Vector<Double>();
-        ou = networks.ForeCast(in);
+        Vector<Double> ou = networks.ForeCast(in);
         System.out.println("the forecast result of" + in + "is");
         System.out.println(ou.elementAt(0));
 
