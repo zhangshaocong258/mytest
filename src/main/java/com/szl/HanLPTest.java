@@ -102,6 +102,10 @@ public class HanLPTest {
         System.out.println(filter(StandardTokenizer.segment("你为什么从阿里巴巴集团离职？")));
         System.out.println(filter(StandardTokenizer.segment("在阿里巴巴工作是怎样一番体验？")));
         System.out.println(filter(StandardTokenizer.segment("阿里巴巴的HR为什么和其他互联网的HR不同，那么引人关注？")));
+        System.out.println((StandardTokenizer.segment("他叫汤姆去拿外衣。")));
+        System.out.println((StandardTokenizer.segment("他点头表示同意我的意见。")));
+        System.out.println((StandardTokenizer.segment("我们即将以昂扬的斗志迎来新的一年。")));
+        System.out.println((StandardTokenizer.segment("国内专家学者40余人参加研讨会。")));
 
 
 
