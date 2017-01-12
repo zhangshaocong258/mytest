@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 /**
  * Created by zsc on 2016/12/26.
- * 全组合，递归实现，难看懂
+ * 全组合，递归实现
+ * 输入1234
  */
 public class FullAssembly {
     public static void main(String[] args) {
