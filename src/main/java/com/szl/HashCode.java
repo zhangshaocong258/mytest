@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * 查看hashcode
  */
 public class HashCode {
-    Num n = new Num();
+    HashNum n = new HashNum();
 
     public static void main (String[] args){
         new HashCode().in();
@@ -31,7 +31,7 @@ public class HashCode {
         }
 }
 
-class Num{
+class HashNum{
     ArrayList<String> s = new ArrayList<>();
     void init(){
 
