@@ -82,6 +82,7 @@ public class FullAssembly2 {
         return listInteger;
     }
 
+    //1的个数
     private static int bitCount1(int n) {
         n = (n & 0x55555555) + ((n >> 1) & 0x55555555);
         n = (n & 0x33333333) + ((n >> 2) & 0x33333333);

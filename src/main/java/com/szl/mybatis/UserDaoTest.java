@@ -15,9 +15,9 @@ import java.util.List;
 public class UserDaoTest {
     public static void main(String args[]) {
         UserDaoTest userDaoTest = new UserDaoTest();
-        userDaoTest.select();
+//        userDaoTest.select();
 //        userDaoTest.selectAll();
-//        userDaoTest.insert();
+        userDaoTest.insert();
 //        userDaoTest.update();
 //        userDaoTest.remove();
 
@@ -39,7 +39,7 @@ public class UserDaoTest {
     public void insert() {
         SqlSession sqlSession = getSessionFactory().openSession();
         UserDao userMapper = sqlSession.getMapper(UserDao.class);
-        User u = new User(1, "new", "11", "ff");
+        User u = new User(1, "new", "11", "ff");//xml中设置是否自动编号
 //        u.setUserName("zsc");
 //        u.setUserAge("18");
 //        u.setUserAddress("uuu");
