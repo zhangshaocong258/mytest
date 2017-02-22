@@ -43,6 +43,7 @@ public class ThreadLocalTest {
         Thread thread2 = new Thread(sharedRunnableInstance);
         thread1.start();
         thread2.start();
+
     }
 
 }
