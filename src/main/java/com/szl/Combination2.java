@@ -18,7 +18,7 @@ import java.util.List;
  * 应为
  * [1, 2, 4, 8, 3, 5, 9, 6, 10, 12, 7, 11, 13, 14, 15]
  */
-public class FullAssembly2 {
+public class Combination2 {
     public static void main(String args[]) {
         List<String> result = new ArrayList<String>();
         gen(result);
