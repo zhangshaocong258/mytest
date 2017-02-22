@@ -50,12 +50,5 @@ interface interfaceTest {
 
     void onTaskAddedDis();
 
-    default void onTaskAdded() {
-        System.out.println("aa");
-    }
-
-    static void aa() {
-        System.out.println("aaa");
-    }
 
 }
