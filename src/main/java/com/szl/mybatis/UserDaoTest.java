@@ -39,7 +39,7 @@ public class UserDaoTest {
     public void insert() {
         SqlSession sqlSession = getSessionFactory().openSession();
         UserDao userMapper = sqlSession.getMapper(UserDao.class);
-        User u = new User(1, "new", "11", "ff");//xml中设置是否自动编号
+        User u = new User(2, "ddaa", "11", "faff");//xml中设置是否自动编号
 //        u.setUserName("zsc");
 //        u.setUserAge("18");
 //        u.setUserAddress("uuu");

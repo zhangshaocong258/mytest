@@ -8,14 +8,10 @@ public class LRU {
     public static void main(String[] args) {
         int max_size = 3;
         int queue[] = {7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0};
-        Test test = new Test();
-        int count = test.LuaMethod(max_size, queue);
+        int count = LuaMethod(max_size, queue);
         System.out.println("结果：" + count);
     }
-}
-
-class Test {
-    public int LuaMethod(int max_size, int queue[]) {
+    public static int LuaMethod(int max_size, int queue[]) {
         int count = 0;//计数
         int current_count = 0;//当前长度
         int back = 0;//插入位置
@@ -67,3 +63,4 @@ class Test {
         return count;
     }
 }
+
