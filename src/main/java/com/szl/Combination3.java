@@ -74,7 +74,7 @@ public class Combination3 {
                         }
                         while (array[end] == 0) {
                             end--;
-                            if (end < i)
+                            if (end < k)
                                 break;
                         }
 
@@ -86,7 +86,7 @@ public class Combination3 {
                             break;
                         }
                     }
-                    break;
+//                    break;
                 }
             }
             //得到一条组合
