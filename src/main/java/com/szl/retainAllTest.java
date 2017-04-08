@@ -7,7 +7,7 @@ import java.util.Set;
  * Created by zsc on 2016/12/25.
  * list交集
  */
-public class retainAllTest {
+public class RetainAllTest {
     public static void main(String args[]) {
         Set<Integer> result = new HashSet<Integer>();
         Set<Integer> set1 = new HashSet<Integer>() {{
