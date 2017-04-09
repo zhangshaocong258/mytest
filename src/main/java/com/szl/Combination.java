@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Combination {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String s = scan.next();
+        String s = scan.nextLine();
         ArrayList<String> list = new ArrayList<>();
         ArrayList<Character> com = new ArrayList<>();
         int len = s.length() + 1;
