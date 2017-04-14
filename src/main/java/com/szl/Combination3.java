@@ -1,6 +1,5 @@
 package com.szl;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,7 +74,7 @@ public class Combination3 {
                         }
                         while (array[end] == 0) {
                             end--;
-                            if (end < i)
+                            if (end < k)
                                 break;
                         }
 
@@ -98,20 +97,18 @@ public class Combination3 {
             }
             result.add("\n");
         }
-
-
     }
 
     //获取长度为len的组合数C(arrLen,len)的个数
     private static int getCountOfCombinations(int arrLen, int len) {
-        BigInteger m = BigInteger.valueOf(1);
+        int m = 1;
         for (int i = 0; i < len; i++) {
-            m = m.multiply(BigInteger.valueOf(arrLen - i)) ;
+            m *= arrLen - i;
         }
-        BigInteger n = BigInteger.valueOf(1);
+        int n = 1;
         for (int i = len; i > 1; i--) {
-            n = n.multiply(BigInteger.valueOf(i));
+            n *= i;
         }
-        return (m.divide(n)).intValue() ;
+        return m / n;
     }
 }
