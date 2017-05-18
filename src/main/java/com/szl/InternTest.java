@@ -56,5 +56,18 @@ public class InternTest {
         String s44 = "11";//常量池创建"11"
         s33.intern();//常量池中已存在"11"，不用移动s33指向
         System.out.println(s33 == s44);//因此结果为false
+
+        /**
+         * String 连接
+         */
+
+        String a = "ab";
+        String a2 = "a" + "b";
+        System.out.println(a == a2);//true 编译时优化
+
+        String a3 = "a" + new String("b");
+        System.out.println(a == a3);//false
+
+
     }
 }
