@@ -23,7 +23,7 @@ import java.util.Map.Entry;
 public class SogouScel2Txt {
 
     public static void main(String[] args) throws Exception {
-        sogou("C:\\Users\\zsc\\Desktop\\搜狗中医语料\\ffd.scel", "C:\\Users\\zsc\\Desktop\\搜狗中医语料\\ffd.txt", false);
+        sogou("C:\\Users\\zsc\\Desktop\\搜狗中医语料\\JGYL.scel", "C:\\Users\\zsc\\Desktop\\搜狗中医语料\\JGYL.txt", false);
     }
 
     /**

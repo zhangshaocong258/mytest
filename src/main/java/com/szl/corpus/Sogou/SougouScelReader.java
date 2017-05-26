@@ -63,6 +63,7 @@ public class SougouScelReader {
             model.setType(readString(input, 0x338, reads));
             model.setDescription(readString(input, 0x540, reads));
             model.setSample(readString(input, 0xd40, reads));
+
             read = reads[0];
             input.skip(0x1540 - read);
             read = 0x1540;
