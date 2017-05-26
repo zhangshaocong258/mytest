@@ -1,11 +1,11 @@
-package com.szl.corpus.baidu;
+package com.szl.corpus.sougou;
 
 
 /**
  * 功能：输入scel的词库文件路径,根据指定路径生成包含该词库文件的词条的txt文件
  */
 
-import com.szl.corpus.SougouScelMdel;
+import com.szl.corpus.sougou.SougouScelMdel;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.szl.corpus.baidu;
+package com.szl.corpus.sougou;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
