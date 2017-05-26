@@ -13,10 +13,7 @@ import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Paths;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.Map.Entry;
 
 /**
@@ -24,8 +21,33 @@ import java.util.Map.Entry;
  */
 public class SogouScel2Txt {
 
+    private static String input = "C:\\Users\\zsc\\Desktop\\搜狗中医语料";
+    private static String output = "C:\\Users\\zsc\\Desktop\\搜狗中医语料txt";
+    private static HashMap<String, String> map = new HashMap<String, String>();
+
     public static void main(String[] args) throws Exception {
-        sogou("C:\\Users\\zsc\\Desktop\\搜狗中医语料\\JGYL.scel", "C:\\Users\\zsc\\Desktop\\搜狗中医语料\\JGYL.txt", false);
+        File inputFile = new File(input);
+        getFiles(inputFile);
+        for (Entry<String, String> entry : map.entrySet()) {
+//            System.out.println(entry.getKey()+ "\t" + entry.getValue());
+            sogou(entry.getKey(), entry.getValue(), false);
+
+        }
+
+//        sogou("C:\\Users\\zsc\\Desktop\\搜狗中医语料\\JGYL.scel", "C:\\Users\\zsc\\Desktop\\搜狗中医语料\\JGYL.txt", false);
+    }
+
+    private static void getFiles(File file) {
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            for (File f : files) {
+                if (f.isDirectory()) {
+                    getFiles(f);
+                } else {
+                    map.put(f.getAbsolutePath(), output + "\\" + f.getName().substring(0, f.getName().indexOf(".")) + ".txt");
+                }
+            }
+        }
     }
 
     /**
