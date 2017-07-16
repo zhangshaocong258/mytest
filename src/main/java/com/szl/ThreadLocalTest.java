@@ -2,6 +2,8 @@ package com.szl;
 
 /**
  * Created by zsc on 2017/2/22.
+ * MyRunnable被传入多个线程，线程1自增3次，最后结果为3，线程2自增5次，最后结果为5，只能用ThreadLocal实现
+ * 若用n实现，则记过为8
  */
 public class ThreadLocalTest {
 
