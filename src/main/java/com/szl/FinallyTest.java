@@ -58,7 +58,7 @@ class FinalTemp implements Callable {
     public String function() {
 
         try {
-            HashSet<String> ports = new HashSet<>();
+            HashSet<String> ports = new HashSet<String>();
             for (int i = 0; i < 10; i++) {
                 ports.add(i + "");
             }

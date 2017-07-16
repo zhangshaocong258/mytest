@@ -32,7 +32,7 @@ public class HashCode {
 }
 
 class HashNum{
-    ArrayList<String> s = new ArrayList<>();
+    ArrayList<String> s = new ArrayList<String>();
     void init(){
 
     }

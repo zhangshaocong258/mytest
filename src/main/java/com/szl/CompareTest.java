@@ -10,7 +10,7 @@ import java.util.Collections;
  */
 public class CompareTest {
     public static void main(String args[]) {
-        ArrayList<myClazz> list = new ArrayList<>();
+        ArrayList<myClazz> list = new ArrayList<myClazz>();
         myClazz c1 = new myClazz(1);
         myClazz c3 = new myClazz(3);
         myClazz c2 = new myClazz(2);

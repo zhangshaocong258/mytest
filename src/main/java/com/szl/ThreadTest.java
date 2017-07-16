@@ -20,7 +20,7 @@ package com.szl;
 public class ThreadTest extends Thread
 {
     private int i ;
-    ThreadLocal<String> threadLocal = new ThreadLocal<>();
+    ThreadLocal<String> threadLocal = new ThreadLocal<String>();
     // 重写run方法，run方法的方法体就是线程执行体
     public void run()
     {

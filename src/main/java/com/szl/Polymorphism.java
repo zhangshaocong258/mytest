@@ -21,12 +21,19 @@ public class Polymorphism {
 }
 
 class Animal {
+    private String fun() {
+        System.out.println("fun");
+        return "fun";
+    }
     public void eat() {//改成private报错
         System.out.println("父类的 eating...");
     }
 }
 
 class Bird extends Animal {
+    public String fun() {
+        return "1";
+    }
     public void eat() {
         System.out.println("子类重写的父类的  eatting...");
     }

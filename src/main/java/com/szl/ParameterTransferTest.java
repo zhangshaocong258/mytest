@@ -14,7 +14,7 @@ public class ParameterTransferTest {
         changeStr(str);
         System.out.println(str);
 
-        Map<String, String > map = new HashMap<>();
+        Map<String, String> map = new HashMap<String, String>();
         map.put("1", "a");
         changeMap(map);
         System.out.println(map.size());

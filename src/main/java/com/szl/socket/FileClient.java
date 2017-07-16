@@ -33,7 +33,7 @@ public class FileClient {
 
     }
 
-    public static void sendFile(Socket socket, int count) {
+    public static void sendFile(final Socket socket, final int count) {
         Runnable runnable = new Runnable() {
             boolean bool;
             DataOutputStream dos = null;
@@ -89,7 +89,7 @@ public class FileClient {
 
     }
 
-    public static void sendFile2(int count) {
+    public static void sendFile2(final int count) {
         Runnable runnable = new Runnable() {
             boolean bool;
             DataOutputStream dos = null;
@@ -146,7 +146,7 @@ public class FileClient {
     }
 
 
-    public static void receiveFile(Socket socket, int count) throws IOException {
+    public static void receiveFile(final Socket socket, final int count) throws IOException {
         Runnable runnable = new Runnable() {
             DataInputStream dis = null;
             FileOutputStream fos = null;
@@ -195,7 +195,7 @@ public class FileClient {
         new Thread(runnable).start();
     }
 
-    public static void receiveFile2(int count) throws IOException {
+    public static void receiveFile2(final int count) throws IOException {
         Runnable runnable = new Runnable() {
             DataInputStream dis = null;
             FileOutputStream fos = null;

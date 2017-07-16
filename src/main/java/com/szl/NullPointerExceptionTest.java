@@ -51,7 +51,7 @@ class Temp implements Callable {
 
     public void function() {
 
-        HashSet<String> ports = new HashSet<>();
+        HashSet<String> ports = new HashSet<String>();
         for (int i = 0; i < 10; i++) {
             ports.add(i + "");
         }

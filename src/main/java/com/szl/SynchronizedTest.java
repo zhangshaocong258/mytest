@@ -8,23 +8,25 @@ package com.szl;
  * 4和5竞争锁
  *
  * 特殊 1和3不竞争锁  2和3不竞争锁
+ * 
+ * java1.8自动加final
  */
 public class SynchronizedTest {
 
     public static void main(String args[]) {
 
-        TestClass testClass = new TestClass();
+        final TestClass testClass = new TestClass();
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                testClass.demoMethod2();
+                testClass.demoMethod1();
             }
         });
 
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                testClass.demoMethod3();
+                testClass.demoMethod2();
             }
         });
 
@@ -96,7 +98,6 @@ class TestClass {
                     e.printStackTrace();
                 }
             }
-
         }
     }
 

@@ -40,7 +40,7 @@ public class WordSegmentation {
 
     private static void genSpacing(File file) throws IOException {
         List<String> lines = FileUtils.readLines(file, "UTF-8");
-        List<String> lines2 = new ArrayList<>();
+        List<String> lines2 = new ArrayList<String>();
         for (int i = 0; i < lines.size(); i++) {
             lines2.add(lines.get(i).replace(":", " "));
         }
@@ -51,7 +51,7 @@ public class WordSegmentation {
     private static void secondStep(String path2) throws IOException {
         File file = new File(path2);
         List<String> lines = FileUtils.readLines(file, "UTF-8");
-        List<String> lines2 = new ArrayList<>();
+        List<String> lines2 = new ArrayList<String>();
         for (int i = 0; i < lines.size(); i++) {
             lines2.add(new StringBuilder().append(lines.get(i)).append(" ").append("ns").append(" ").append("1").toString());
         }
@@ -61,7 +61,7 @@ public class WordSegmentation {
 
     private void lastStep(String path, String outPath, String type) throws IOException {
         Set<Word> hashSet = new HashSet<Word>();
-        List<String> lines2 = new ArrayList<>();
+        List<String> lines2 = new ArrayList<String>();
         File folder = new File(path);
         if (folder.isFile() && path.endsWith(type)) {
             combine(folder, hashSet);

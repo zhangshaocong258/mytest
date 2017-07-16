@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Constructor {
     public static void main(String[] args){
-        ArrayList<String> b = new ArrayList<>();
+        ArrayList<String> b = new ArrayList<String>();
         b.add("b");
         Replace r = new Replace(b);
         r.adda();
@@ -17,7 +17,7 @@ public class Constructor {
 }
 
 class Replace{
-    ArrayList<String> a = new ArrayList<>();
+    ArrayList<String> a = new ArrayList<String>();
     Replace(ArrayList<String> aa){
         this.a = aa;
     }

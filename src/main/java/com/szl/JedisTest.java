@@ -22,14 +22,14 @@ public class JedisTest {
 //        saveObj(hashSet2,"E:\\set2");
 
 
-        HashSet<String> hashSet3 = (HashSet<String>)getObj("E:\\set1");
-        for (String str : hashSet3) {
-            jedis.sadd("visitedUrl", str);
-        }
-        HashSet<String> hashSet4 = (HashSet<String>)getObj("E:\\set2");
-        for (String str : hashSet4) {
-            jedis.sadd("410Url", str);
-        }
+//        HashSet<String> hashSet3 = (HashSet<String>)getObj("E:\\set1");
+//        for (String str : hashSet3) {
+//            jedis.sadd("visitedUrl", str);
+//        }
+//        HashSet<String> hashSet4 = (HashSet<String>)getObj("E:\\set2");
+//        for (String str : hashSet4) {
+//            jedis.sadd("410Url", str);
+//        }
         jedis.save();
 
     }

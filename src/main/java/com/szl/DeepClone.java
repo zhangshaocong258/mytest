@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class DeepClone {
     public static void main(String args[]) throws Exception {
-        ArrayList<PojoStr> listPojoStr0 = new ArrayList<>();
+        ArrayList<PojoStr> listPojoStr0 = new ArrayList<PojoStr>();
         PojoStr p1 = new PojoStr();
         p1.setStr("xxx1");
         listPojoStr0.add(p1);
@@ -23,13 +23,13 @@ public class DeepClone {
         p3.setStr("xxx3");
         listPojoStr0.add(p3);
 
-        List<PojoStr> listPojoStr1 = new ArrayList<>(listPojoStr0);
+        List<PojoStr> listPojoStr1 = new ArrayList<PojoStr>(listPojoStr0);
 
-        List<PojoStr> listPojoStr2 = new ArrayList<>();
+        List<PojoStr> listPojoStr2 = new ArrayList<PojoStr>();
         for (int i = 0, l = listPojoStr0.size(); i < l; i++)
             listPojoStr2.add(listPojoStr0.get(i));
 
-        List<PojoStr> listPojoStr3 = new ArrayList<>(Arrays.asList(new PojoStr[listPojoStr0.size()]));
+        List<PojoStr> listPojoStr3 = new ArrayList<PojoStr>(Arrays.asList(new PojoStr[listPojoStr0.size()]));
         Collections.copy(listPojoStr3, listPojoStr0);
 
         PojoStr[] strs = new PojoStr[listPojoStr0.size()];

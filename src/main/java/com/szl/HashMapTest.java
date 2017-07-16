@@ -18,7 +18,7 @@ public class HashMapTest {
         emp.setName("Robin");
 
         // Put object in HashMap.
-        Map<Employee, String> map = new HashMap<>();
+        Map<Employee, String> map = new HashMap<Employee, String>();
         map.put(emp, "Showbasky");
 
         System.out.println(map.get(emp));

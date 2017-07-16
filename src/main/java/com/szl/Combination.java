@@ -15,8 +15,8 @@ public class Combination {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine();
-        ArrayList<String> list = new ArrayList<>();
-        ArrayList<Character> com = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<Character> com = new ArrayList<Character>();
         int len = s.length() + 1;
 
         for (int i = len - 1; i != 0; i--) {
