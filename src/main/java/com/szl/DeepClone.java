@@ -1,5 +1,6 @@
 package com.szl;
 
+import java.io.Closeable;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,7 +9,7 @@ import java.util.List;
 
 /**
  * Created by zsc on 2017/6/13.
- * 深拷贝
+ * 都是浅拷贝
  */
 public class DeepClone {
     public static void main(String args[]) throws Exception {
@@ -49,12 +50,12 @@ public class DeepClone {
     }
 }
 
-class PojoStr implements Serializable {
+class PojoStr implements Serializable ,Cloneable{
     /**
      *
      */
     @Override
-    protected PojoStr clone() {
+    protected PojoStr clone(){
         PojoStr clone = null;
         try {
             clone = (PojoStr) super.clone();
