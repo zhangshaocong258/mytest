@@ -71,6 +71,7 @@ public class HanLPTest {
                 }
             }
         };
+        HanLP.Config.enableDebug();
 
         System.out.println("\n***********标准歧义语句*************");
         System.out.println(HanLP.segment("你好，欢迎使用HanLP汉语处理包！"));
@@ -179,7 +180,7 @@ public class HanLPTest {
 
 
 //        System.out.println("\n***********过滤语句*************");
-//        System.out.println(NotionalTokenizer.segment("为何赵本山的徒弟比郭德纲的徒弟忠诚度要高"));
+        System.out.println(NotionalTokenizer.segment("为何赵本山的徒弟比郭德纲的徒弟忠诚度要高"));
 //        System.out.println(NotionalTokenizer.segment("在阿里巴巴当hr是一种怎样的体验"));
 //        System.out.println(NotionalTokenizer.segment("《神奇动物在哪里》中有哪些不易察觉的彩蛋或细节"));
 //        System.out.println(NotionalTokenizer.segment("哈利·波特如果当时进了斯莱特林学院会怎么样"));
