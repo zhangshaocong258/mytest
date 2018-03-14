@@ -5,6 +5,7 @@ package com.szl;
  * 静态初始化，调用时初始化
  * 若1有static关键字，那么在执行2时，k被赋值为5，所以输出5
  * 若1没有static关键字，那么在执行2时，k为0
+ * 执行main之前，所有static全部执行完毕，所以1有static关键字，那么会执行；对于j = getI()，由于按顺序，所以j=0
  */
 public class StaticTest {
     static int j = getI();
