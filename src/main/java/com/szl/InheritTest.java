@@ -3,8 +3,13 @@ package com.szl;
 /**
  * Created by zsc on 2017/9/15.
  * http://blog.csdn.net/iamluole/article/details/7977259
- * 重写实例方法：超类Parent中有实例方法A，子类child定义了与A“相同签名和子集返回类型”的实例方法B，子类对象ChildObj只能调用自己的实例方法B。即使将子类对象ChildObj转换为超类对象ParentObj，ParentObj依然只能调用重写后的实例方法B！(超类对象ParentObj中的实例方法A已经被实例方法B覆盖了)
+ * 重写实例方法：超类Parent中有实例方法A，子类child定义了与A“相同签名和子集返回类型”的实例方法B，子类对象ChildObj只能调用自己的实例方法B。
+ * 即使将子类对象ChildObj转换为超类对象ParentObj，ParentObj依然只能调用重写后的实例方法B！(超类对象ParentObj中的实例方法A已经被实例方法B覆盖了)
+ *
+ *
  * 只有成员变量(不管是不是静态)和静态方法可以被隐藏。
+ *
+ *
  * 重写的语法规则如下：
  * (1)方法签名必须相同(参数类型、个数、顺序);
  * (2)对返回类型有要求，分2种情况：
@@ -44,6 +49,7 @@ package com.szl;
  *
  *
  * final方法无法重写，无论是否为static方法，直接报错
+ * private final == private，子类可以有重名的方法，
  */
 public class InheritTest {
     public static void main(String args[]) {
@@ -71,6 +77,10 @@ class Person {
         System.out.println("person " + s);
     }
 
+    public void fun() {
+        System.out.println("Person fun");
+    }
+
     Person() {
         prt("父类·无参数构造方法： "+"A Person.");
     }//构造方法(1)
@@ -89,6 +99,10 @@ class Chinese extends Person {
         System.out.println("chinese " + s);
     }
 
+    public void fun() {
+        System.out.println("Person fun");
+    }
+
     Chinese() {
         super(); // 调用父类构造方法（1）
         prt("子类·调用父类”无参数构造方法“： "+"A chinese coder.");
@@ -102,6 +116,10 @@ class Chinese extends Person {
     Chinese(String name, int age) {
         this(name);// 调用具有相同形参的构造方法（3）
         prt("子类：调用子类具有相同形参的构造方法：his age is " + age);
+    }
+
+    abstract class Foreigner{
+        abstract void speak();
     }
 
 }

@@ -4,7 +4,7 @@ package com.szl;
  * Created by zsc on 2016/10/20.
  * 抽象类 接口
  */
-public class AbstractTest extends Parent {
+public class AbstractTest extends AbstractParent {
 
     @Override
     void a() {
@@ -23,7 +23,7 @@ public class AbstractTest extends Parent {
 
 }
 
-abstract class Parent {
+abstract class AbstractParent {
     abstract void a();
     abstract void b();
     abstract void d();

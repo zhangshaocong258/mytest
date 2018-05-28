@@ -71,7 +71,7 @@ public class HanLPTest {
                 }
             }
         };
-        HanLP.Config.enableDebug();
+//        HanLP.Config.enableDebug();
 
         System.out.println("\n***********标准歧义语句*************");
         System.out.println(HanLP.segment("你好，欢迎使用HanLP汉语处理包！"));
