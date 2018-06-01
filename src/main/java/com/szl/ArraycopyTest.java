@@ -14,8 +14,8 @@ package com.szl;
  */
 public class ArraycopyTest {
     public static void main(String[] args) {
-        arraycopyTest();
         copyTest();
+        arraycopyTest();
     }
 
     //将原数组中的内容拷贝到新数组

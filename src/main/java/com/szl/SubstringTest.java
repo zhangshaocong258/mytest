@@ -9,6 +9,7 @@ import java.util.Random;
  * -Xms100m -Xmx100m
  * 1.6 substring 报错，split出来的String对象直接使用原String对象的char[]
  * 1.7 以后做了修改，使用了 System.arraycopy()
+ * https://eyalsch.wordpress.com/2009/10/27/stringleaks/
  */
 public class SubstringTest {
     private static Random rnd = new Random();
