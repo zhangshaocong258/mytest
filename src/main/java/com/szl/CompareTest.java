@@ -21,12 +21,18 @@ public class CompareTest {
         System.out.println(list.get(0).num);
         System.out.println(list.get(1).num);
         System.out.println(list.get(2).num);
+        System.out.println(new myClazz().a);
 
     }
 }
 
 class myClazz implements Comparable<myClazz>{
     int num;
+    Integer a;
+
+    public myClazz() {
+    }
+
     myClazz(int num) {
         this.num = num;
     }
